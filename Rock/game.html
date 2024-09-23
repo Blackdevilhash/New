@@ -99,7 +99,12 @@
 
 let computerMove = '';
 let result = '';
-let score = JSON.parse(localStorage.getItem('score'));
+let score={
+    WINS:0,
+    LOSS:0,
+    TIES:0,
+}
+let scoree = JSON.parse(localStorage.getItem('score'));
 
 function rock(){
     let random = Math.random();
@@ -203,7 +208,7 @@ function sissor(){
     }else if(result === 'YOU LOOSE'){
         score.LOSS +=1;
     }
-    localStorage.setItem('score' , JSON.stringify(score));
+    localStorage.setItem('score' , JSON.stringify(scoree));
     if(result === 'YOU WIN'){
         body.style.backgroundColor ='green';
     }else if(result === 'YOU LOOSE'){
